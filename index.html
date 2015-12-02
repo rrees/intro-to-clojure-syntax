@@ -117,6 +117,23 @@
 					</code></pre>
 				</section>
 
+				<section>
+					<h1>Anonymous functions</h1>
+					<h2>#() % fn</h2>
+				</section>
+
+				<section>
+					<h2></h2>
+					<pre><code data-trim>
+(map #(dec %) [1 2]) ; (0 1)
+
+(map (fn [n] (dec n)) [1 2]) ; (0 1)
+
+(map (fn subtract-one [n] (dec n)) [1 2]) ; (0 1)
+					</code></pre>
+				</section>
+
+
 <section>
 	<h1>Arrows</h1>
 	<h1>->></h1>
@@ -183,21 +200,13 @@
 	</code></pre>
 </section>
 
+<!--
 <section>
 	<h2></h2>
 	<pre><code data-trim>
 	</code></pre>
 </section>
-
-
-				<section>
-					<h2>Lists</h2>
-					<pre><code  data-trim contenteditable>
-(def i 2)
-
-(defn g [name] (str "Hello " name))
-					</code></pre>
-				</section>
+-->
 
 				<section>
 					<h1>Your turn!</h1>
