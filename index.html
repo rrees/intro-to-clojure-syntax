@@ -62,12 +62,29 @@
 (function arg1 arg2 ... argn)
 
 (1 2 3)
-# A number cannot be cast to a function
+; A number cannot be cast to a function
 
-(str "Hello" " " "World") # "Hello world"
+(str "Hello" " " "World") ; "Hello world"
 					</code></pre>
 
 				</section>
+
+
+<section>
+	<h1>Keywords</h1>
+	<h1>:</h1>
+</section>
+
+<section>
+	<h2>Superconstants!</h2>
+
+		<pre><code  data-trim contenteditable>
+(= :a :a) ; true
+(:a (hash-map :a 3)) ; 3
+((hash-map :a 3) :a) ; 3
+	</code></pre>
+
+</section>
 
 <section>
 	<h1>Def'ing</h1>
@@ -84,19 +101,19 @@
 
 <section>
 	<h1>Literals</h1>
-	<h1># {} []</h1>
+	<h1>{} [] # `</h1>
 </section>
 
 				<section>
 					<h2>Collection syntax sugar</h2>
 					<pre><code  data-trim contenteditable>
-{:a 1 :b 7} # Maps
+{:a 1 :b 7} ; Maps
 
-'(1 2 3) # Lists
+`(1 2 3) ; Lists
 
-[1 2 3] # Vectors
+[1 2 3] ; Vectors
 
-#{1 2 3} # Sets
+#{1 2 3} ; Sets
 					</code></pre>
 				</section>
 
@@ -115,9 +132,64 @@
 (->> [] # to the right
 	cons 1
 	cons 2
-	str) # "21"
+	str) ; "21"
 	</code></pre>
 </section>
+				<section>
+					<h1>Fear the macro</h1>
+					<h2>' ~ ~@</h2>
+				</section>
+
+				<section>
+					<h2>Ah... I got nothing</h2>
+					<p>quote <strong>'</strong>, unquote <strong>~</strong>, unquote-splicing <strong>~@</strong></p>
+				</section>
+
+				<section>
+					<h1>State</h1>
+					<h2>atom @</h2>
+				</section>
+
+				<section>
+					<h2>Functions return the new state</h2>
+					<pre><code data-trim>
+(defn next-step [count] (inc count))
+(next-step 3) ; 4
+					</code></pre>
+				</section>
+
+				<section>
+					<h2>Atoms wrap state</h2>
+					<pre><code data-trim>
+(def count (atom 1))
+(defn next-step [count] (inc @count))
+(next-step 3) ; 4
+(deref count) ; 3
+					</code></pre>
+				</section>
+
+				<section>
+					<h1>Bang!</h1>
+					<h2>swap!</h2>
+				</section>
+
+<section>
+	<h2>Persisting state!</h2>
+	<pre><code data-trim>
+(def count (atom 1))
+(defn next-step [count] (swap! count inc))
+(next-step 3) ; 4
+(deref count) ; 4
+	</code></pre>
+</section>
+
+<section>
+	<h2></h2>
+	<pre><code data-trim>
+	</code></pre>
+</section>
+
+
 				<section>
 					<h2>Lists</h2>
 					<pre><code  data-trim contenteditable>
@@ -125,6 +197,42 @@
 
 (defn g [name] (str "Hello " name))
 					</code></pre>
+				</section>
+
+				<section>
+					<h1>Your turn!</h1>
+				</section>
+
+				<section>
+					<h1>Parens</h1>
+					<h1>()</h1>
+				</section>
+
+				<section>
+					<h1>Colon</h1>
+				</section>
+
+				<section>
+					<h1>Semi-colon?</h1>
+				</section>
+
+				<section>
+					<h1>Brackets!</h1>
+					<h1># {} []</h1>
+				</section>
+
+				<section>
+					<h1>Def?</h1>
+				</section>
+
+
+				<section>
+					<h1>Arrows</h1>
+					<h1>->></h1>
+				</section>
+
+				<section>
+					<h1>Bang!</h1>
 				</section>
 			</div>
 
