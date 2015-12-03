@@ -64,7 +64,7 @@
 (1 2 3)
 ; A number cannot be cast to a function
 
-(str "Hello" " " "World") ; "Hello world"
+(str "Hello" " " "World") ; "Hello World"
 					</code></pre>
 
 				</section>
@@ -121,6 +121,23 @@
 					<h1>Anonymous functions</h1>
 					<h2>#() % fn</h2>
 				</section>
+
+                <section>
+					<h2></h2>
+					<pre><code data-trim>
+;; three ways to write the same thing
+#(dec %)
+(fn [n] (dec n))
+(fn subtract-one [n] (dec n))
+
+(#(dec %) 1) ; 0
+
+((fn [n] (dec n)) 1) ; 0
+
+((fn subtract-one [n] (dec n)) 1) ; 0
+					</code></pre>
+				</section>
+
 
 				<section>
 					<h2></h2>
